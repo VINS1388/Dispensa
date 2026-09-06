@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La dispensa</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dispensa">
+<meta name="theme-color" content="#15181D">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#FFFFFF;--carta:#F6F7F9;--testo:#15181D;--tenue:#8A929F;--linea:#E4E7EC;
+    --acc:#2563EB;--mezzo:#93B4F7;--vuoto:#DC2626;--capo:#15181D;--capotenue:#8A929F;
+    --font:"Avenir Next",Avenir,"Nunito Sans",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--capo)}
+  body{font-family:var(--font);color:var(--testo);overscroll-behavior:none;
+    -webkit-text-size-adjust:100%}
+  #app{background:var(--bg);min-height:100vh;max-width:560px;margin:0 auto;
+    padding-bottom:calc(46px + env(safe-area-inset-bottom))}
+  .head{background:var(--capo);color:#fff;padding:calc(15px + env(safe-area-inset-top)) 18px 0}
+  .head h1{font-size:24px;margin:0 0 13px;font-weight:600;letter-spacing:.2px}
+  .tabs{display:flex;gap:4px}
+  .tab{flex:1;background:transparent;border:0;color:var(--capotenue);padding:12px 6px;
+    font-size:15px;font-family:inherit;border-radius:12px 12px 0 0}
+  .tab[data-on="1"]{background:var(--bg);color:var(--testo);font-weight:600}
+  .badge{display:inline-block;min-width:20px;padding:1px 6px;margin-left:5px;border-radius:11px;
+    background:var(--vuoto);color:#fff;font-size:12px;font-weight:600}
+  .tab[data-on="0"] .badge{background:#3A3F49;color:#D6DAE0}
+  .barra{display:flex;gap:8px;padding:14px 16px 6px}
+  input,select,textarea{font-family:inherit;font-size:16px;padding:11px 12px;border-radius:11px;
+    border:1.5px solid var(--linea);background:var(--carta);color:var(--testo);min-width:0}
+  input{flex:1}
+  .btn{border:0;border-radius:11px;background:var(--acc);color:#fff;
+    font-family:inherit;font-size:16px;padding:11px 16px;font-weight:500}
+  .btn.chiaro{background:var(--carta);color:var(--testo);border:1.5px solid var(--linea)}
+  .prog{padding:12px 16px 0}
+  .prog .n{font-size:13px;color:var(--tenue);margin-bottom:6px;font-variant-numeric:tabular-nums}
+  .prog .b{height:5px;border-radius:3px;background:var(--linea);overflow:hidden}
+  .prog .b i{display:block;height:100%;background:var(--acc);border-radius:3px}
+  .cat{display:flex;align-items:center;gap:10px;padding:18px 16px 2px;
+    font-size:14px;color:var(--tenue);font-weight:500;letter-spacing:.2px}
+  .cat::after{content:"";flex:1;height:1px;background:var(--linea)}
+  .riga{display:flex;align-items:center;gap:8px;padding:1px 16px}
+  .tocca{display:flex;align-items:center;gap:12px;flex:1;background:none;border:0;
+    padding:9px 0;text-align:left;font-family:inherit;color:inherit;min-height:48px}
+  .nome{font-size:17.5px;flex:1;line-height:1.25}
+  .qta{font-size:15.5px;color:var(--acc);font-variant-numeric:tabular-nums;white-space:nowrap;
+    font-weight:500}
+  .tag{font-size:11.5px;color:var(--tenue);border:1px solid var(--linea);border-radius:6px;
+    padding:2px 6px;white-space:nowrap}
+  .tag.rosso{color:var(--vuoto);border-color:#F3C9C9}
+  .jarbtn{flex:none;background:none;border:0;padding:10px 4px 10px 0;line-height:0}
+  .jarbtn svg{transition:transform .16s ease}
+  .jarbtn:active svg{transform:scale(.86)}
+  .fill{transform-box:fill-box;transform-origin:bottom;
+    transition:transform .34s cubic-bezier(.22,.9,.3,1), fill .34s ease}
+  .quad{width:25px;height:25px;border:1.9px solid var(--tenue);border-radius:8px;flex:none}
+  .x{border:0;background:none;color:var(--vuoto);font-size:24px;padding:6px 10px;line-height:1}
+  .vuota .nome{color:var(--vuoto)}
+  .pannello{margin:2px 16px 10px;padding:12px;background:var(--carta);
+    border:1.5px solid var(--linea);border-radius:13px}
+  .step{display:flex;align-items:center;gap:8px}
+  .step button{flex:none;width:46px;height:46px;border-radius:12px;border:1.5px solid var(--linea);
+    background:var(--bg);color:var(--testo);font-size:22px;font-family:inherit;line-height:1}
+  .step input{flex:1;text-align:center;font-size:18px;font-variant-numeric:tabular-nums;
+    background:var(--bg)}
+  .step .u{flex:none;color:var(--tenue);font-size:15px;min-width:30px}
+  .azioni{display:flex;gap:8px;margin-top:9px}
+  .azioni button{flex:1;padding:10px;border-radius:11px;border:1.5px solid var(--linea);
+    background:var(--bg);color:var(--testo);font-family:inherit;font-size:14.5px}
+  .azioni button.rosso{color:var(--vuoto)}
+  .modo{display:flex;justify-content:flex-end;padding:6px 16px 0}
+  .link{background:none;border:0;color:var(--acc);font-family:inherit;font-size:14px;padding:8px 0}
+  .vuoto{padding:30px 26px;text-align:center;color:var(--tenue);font-size:16px;line-height:1.55}
+  .vuoto p{margin:0 0 16px}
+  .pie{margin-top:24px;padding:0 16px;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .box{margin:14px 16px 0;padding:15px 16px;border:1.5px solid var(--linea);
+    border-radius:14px;background:var(--carta);font-size:15px;line-height:1.55}
+  .box h3{font-size:15.5px;margin:15px 0 6px;font-weight:600}
+  .box h3:first-child{margin-top:0}
+  .box ul{margin:0;padding-left:18px}
+  .box li{padding:3px 0}
+  .box p{margin:0 0 8px}
+  .box code{background:var(--bg);border:1px solid var(--linea);padding:1px 5px;
+    border-radius:5px;font-size:13.5px}
+  .err{border-color:var(--vuoto);color:var(--vuoto)}
+  .giorni{display:flex;gap:6px;padding:14px 16px 2px;overflow-x:auto}
+  .g{flex:none;min-width:46px;padding:10px 13px;border-radius:12px;border:1.5px solid var(--linea);
+    background:var(--carta);color:var(--tenue);font-family:inherit;font-size:15px}
+  .g[data-on="1"]{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
+  .gtitolo{padding:16px 16px 0}
+  .gtitolo h2{font-size:22px;margin:0;font-weight:600}
+  .gtot{font-size:14px;color:var(--tenue);margin-top:6px;font-variant-numeric:tabular-nums}
+  .pasto{padding:18px 16px 0}
+  .pnome{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .pnome b{font-size:17px;font-weight:600}
+  .pmac{font-size:12.5px;color:var(--tenue);font-variant-numeric:tabular-nums}
+  ul.cibi{list-style:none;margin:8px 0 0;padding:0}
+  ul.cibi li{font-size:16.5px;line-height:1.45;padding:5px 0 5px 15px;position:relative;
+    display:flex;gap:10px;align-items:baseline}
+  ul.cibi li::before{content:"";position:absolute;left:2px;top:13px;width:5px;height:5px;
+    border-radius:50%;background:var(--acc)}
+  ul.cibi li span{flex:1}
+  ul.cibi li em{color:var(--acc);font-style:normal;font-variant-numeric:tabular-nums;
+    white-space:nowrap;font-size:15.5px;font-weight:500}
+  .ed-testa{padding:14px 16px 0}
+  .ed-tit{width:100%;font-size:21px;font-weight:600;padding:12px}
+  .ed-sot{width:100%;font-size:14px;margin-top:8px;color:var(--tenue);padding:10px 12px}
+  .ed-pasto{margin:14px 16px 0;padding:12px;border:1.5px solid var(--linea);
+    border-radius:14px;background:var(--carta)}
+  .ed-riga1{display:flex;gap:6px;align-items:center}
+  .ed-pn{flex:1;font-size:17px;font-weight:600;padding:10px 12px;background:var(--bg)}
+  .ed-pasto .ed-sot{background:var(--bg)}
+  .ed-cibo{display:flex;gap:6px;align-items:center;margin-top:8px}
+  .ed-nome{flex:1;min-width:0;padding:10px 11px;background:var(--bg);font-size:16px}
+  .ed-q{width:74px;flex:none;padding:10px 6px;text-align:center;background:var(--bg);
+    font-variant-numeric:tabular-nums}
+  .ed-u{width:66px;flex:none;padding:10px 4px;background:var(--bg);font-size:15px}
+  .ed-piu{margin-top:10px;width:100%;padding:11px;border-radius:11px;border:1.5px dashed var(--linea);
+    background:none;color:var(--acc);font-family:inherit;font-size:15px}
+  textarea.editor{width:100%;height:46vh;font-size:14px;line-height:1.5;
+    font-family:ui-monospace,Menlo,monospace}
+  .riga2{display:flex;gap:8px;margin-top:10px}
+  .riga2 .btn{flex:1;font-size:15px;padding:11px}
+  button{cursor:pointer}
+  button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+    outline:2.5px solid var(--acc);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(function(){
+  "use strict";
+  var KEY = "dispensa.v1";
+  var VERSIONE = "5 · 7 settembre 2026";
+  var CATS = ["Frutta e verdura","Carne","Pesce","Frigo","Freezer","Credenza","Casa","Altro"];
+  var UNITA = ["g","kg","ml","l","pz"];
+  var PASSO = {g:50, kg:0.5, ml:100, l:0.5, pz:1};
+
+  var PASTI_NOTI = ["colazione","spuntino","spuntino 2","secondo spuntino","pranzo","merenda",
+    "cena","dopo cena","prima di dormire","pre nanna","pre-allenamento","pre allenamento",
+    "post-allenamento","post allenamento"];
+
+  var REPARTI = [
+    ["tonno","Credenza"],["lenticchie","Credenza"],["legumi","Credenza"],["ceci","Credenza"],
+    ["fagioli","Credenza"],["passata","Credenza"],["pelati","Credenza"],
+    ["fiocchi d'avena","Credenza"],["avena","Credenza"],["riso","Credenza"],["pasta","Credenza"],
+    ["cous cous","Credenza"],["orzo","Credenza"],["farro","Credenza"],["polenta","Credenza"],
+    ["pane","Credenza"],["fette biscottate","Credenza"],["miele","Credenza"],
+    ["marmellata","Credenza"],["olio","Credenza"],["mandorle","Credenza"],["noci","Credenza"],
+    ["nocciole","Credenza"],["arachidi","Credenza"],["proteine in polvere","Credenza"],
+    ["creatina","Credenza"],["caffè","Credenza"],["caffe","Credenza"],["sale","Credenza"],
+    ["zucchero","Credenza"],["aceto","Credenza"],["tè","Credenza"],
+    ["surgelat","Freezer"],["frutti di bosco","Freezer"],
+    ["fiocchi di latte","Frigo"],["latte","Frigo"],["yogurt","Frigo"],["uova","Frigo"],
+    ["albumi","Frigo"],["ricotta","Frigo"],["burro d'arachidi","Credenza"],["burro","Frigo"],
+    ["parmigiano","Frigo"],["mozzarella","Frigo"],["grana","Frigo"],
+    ["pollo","Carne"],["tacchino","Carne"],["manzo","Carne"],["macinato","Carne"],
+    ["bresaola","Carne"],["prosciutto","Carne"],["vitello","Carne"],["fesa","Carne"],
+    ["merluzzo","Pesce"],["salmone","Pesce"],["sgombro","Pesce"],["gamberi","Pesce"],
+    ["seppie","Pesce"],["calamari","Pesce"],["orata","Pesce"],["branzino","Pesce"],
+    ["platessa","Pesce"],["nasello","Pesce"],["spigola","Pesce"],
+    ["detersivo","Casa"],["carta casa","Casa"],["sacchetti","Casa"],["sapone","Casa"]
+  ];
+  // confezioni tipiche del supermercato: nome contenuto -> [quantità, unità, come si chiama]
+  var CONFEZIONI = [
+    ["riso",1,"kg","pacco"],["pasta",500,"g","pacco"],["cous cous",500,"g","pacco"],
+    ["orzo",500,"g","pacco"],["farro",500,"g","pacco"],["polenta",500,"g","pacco"],
+    ["fiocchi d'avena",500,"g","pacco"],["avena",500,"g","pacco"],
+    ["pane",400,"g","pagnotta"],["fette biscottate",315,"g","pacco"],
+    ["latte",1,"l","brick"],["spremuta",1,"l","bottiglia"],
+    ["yogurt greco",500,"g","vasetto"],["yogurt",500,"g","vasetto"],
+    ["fiocchi di latte",200,"g","vaschetta"],["ricotta",250,"g","vaschetta"],
+    ["burro d'arachidi",350,"g","barattolo"],["burro",250,"g","panetto"],
+    ["parmigiano",200,"g","pezzo"],["mozzarella",125,"g","confezione"],
+    ["uova",6,"pz","confezione"],
+    ["tonno",80,"g","scatoletta"],["passata",700,"g","bottiglia"],["pelati",400,"g","barattolo"],
+    ["lenticchie",400,"g","barattolo"],["legumi",400,"g","barattolo"],
+    ["ceci",400,"g","barattolo"],["fagioli",400,"g","barattolo"],
+    ["olio",1,"l","bottiglia"],["aceto",500,"ml","bottiglia"],
+    ["mandorle",200,"g","busta"],["noci",200,"g","busta"],["nocciole",200,"g","busta"],
+    ["miele",400,"g","vasetto"],["marmellata",340,"g","vasetto"],
+    ["proteine in polvere",900,"g","barattolo"],["creatina",300,"g","barattolo"],
+    ["frutti di bosco",300,"g","busta"],["surgelat",450,"g","busta"],
+    ["sale",1,"kg","pacco"],["zucchero",1,"kg","pacco"],["caffè",250,"g","pacco"]
+  ];
+
+  // contenitori che si aprono e si consumano uno alla volta
+  var DISCRETI = {scatoletta:"scatolette", vasetto:"vasetti", vaschetta:"vaschette",
+    brick:"brick", bottiglia:"bottiglie", barattolo:"barattoli", confezione:"confezioni",
+    panetto:"panetti", pezzo:"pezzi"};
+
+  var VERDURA = ["banana","mela","mele","pera","pere","arancia","arance","spremuta","limone",
+    "kiwi","uva","frutto","frutta","pomodor","insalata","verdur","zucchin","melanzan","peperon",
+    "broccol","cavolfior","spinaci","bietol","cetriol","finocchi","asparagi","funghi","cipoll",
+    "carote","cavolo","patate","rucola","zucca","sedano"];
+
+  var SEED = [
+"# Fase 1 - mantenimento 83-84 kg",
+"",
+"G1 · Pollo e merluzzo",
+"= 2.535 kcal · P 165 · G 70 · C 303",
+"Colazione",
+"~ 730 kcal · P 26 · G 24 · C 101",
+"fiocchi d'avena 90 g",
+"latte intero 300 ml",
+"banana 1 pz",
+"mandorle 15 g",
+"caffè",
+"Spuntino",
+"~ 390 kcal · P 26 · G 6 · C 60",
+"yogurt greco 2% 200 g",
+"miele 30 g",
+"pane integrale 60 g",
+"Pranzo",
+"~ 910 kcal · P 74 · G 23 · C 95",
+"riso basmati 110 g",
+"petto di pollo 200 g",
+"zucchine 150 g",
+"peperoni 100 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 505 kcal · P 39 · G 17 · C 47",
+"merluzzo 180 g",
+"patate 250 g",
+"insalata 100 g",
+"pomodori 150 g",
+"olio extravergine 15 ml",
+"",
+"G2 · Uova e manzo",
+"= 2.465 kcal · P 166 · G 78 · C 259",
+"Colazione",
+"~ 510 kcal · P 28 · G 21 · C 52",
+"uova 3 pz",
+"pane integrale 80 g",
+"burro 5 g",
+"arance 1 pz",
+"caffè",
+"Spuntino",
+"~ 360 kcal · P 28 · G 15 · C 34",
+"yogurt greco 2% 250 g",
+"mele 1 pz",
+"noci 15 g",
+"Pranzo",
+"~ 865 kcal · P 56 · G 27 · C 88",
+"pasta integrale 120 g",
+"macinato di manzo 5% 180 g",
+"passata di pomodoro 200 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 730 kcal · P 54 · G 15 · C 85",
+"fesa di tacchino 200 g",
+"patate dolci 300 g",
+"verdure miste 200 g",
+"pane integrale 40 g",
+"olio extravergine 10 ml",
+"",
+"G3 · Salmone e bresaola",
+"= 2.545 kcal · P 164 · G 70 · C 294",
+"Colazione",
+"~ 820 kcal · P 32 · G 20 · C 115",
+"fiocchi d'avena 90 g",
+"latte intero 250 ml",
+"proteine in polvere 20 g",
+"frutti di bosco surgelati 150 g",
+"banana 1 pz",
+"mandorle 10 g",
+"Spuntino",
+"~ 340 kcal · P 29 · G 3 · C 50",
+"bresaola 70 g",
+"pane integrale 60 g",
+"pere 1 pz",
+"Pranzo",
+"~ 835 kcal · P 58 · G 21 · C 96",
+"riso basmati 110 g",
+"petto di pollo 150 g",
+"verdure miste 250 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 550 kcal · P 45 · G 26 · C 33",
+"salmone 180 g",
+"pane integrale 60 g",
+"insalata 100 g",
+"limone 1 pz",
+"",
+"G4 · Legumi",
+"= 2.525 kcal · P 162 · G 70 · C 309",
+"Colazione",
+"~ 685 kcal · P 41 · G 18 · C 92",
+"yogurt greco 2% 250 g",
+"fiocchi d'avena 80 g",
+"banana 1 pz",
+"burro d'arachidi 15 g",
+"Spuntino",
+"~ 375 kcal · P 19 · G 12 · C 50",
+"uova 2 pz",
+"pane integrale 60 g",
+"mele 1 pz",
+"Pranzo",
+"~ 760 kcal · P 32 · G 18 · C 117",
+"pasta integrale 100 g",
+"lenticchie lessate 200 g",
+"verdure miste 150 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 705 kcal · P 70 · G 22 · C 50",
+"petto di pollo 200 g",
+"patate 250 g",
+"verdure miste 200 g",
+"olio extravergine 15 ml",
+"",
+"G5 · Tonno e sgombro",
+"= 2.565 kcal · P 167 · G 79 · C 282",
+"Colazione",
+"~ 635 kcal · P 23 · G 11 · C 110",
+"pane integrale 120 g",
+"ricotta 100 g",
+"miele 30 g",
+"banana 1 pz",
+"Spuntino",
+"~ 400 kcal · P 36 · G 20 · C 16",
+"proteine in polvere 30 g",
+"latte intero 250 ml",
+"mandorle 20 g",
+"Pranzo",
+"~ 815 kcal · P 62 · G 17 · C 96",
+"riso basmati 110 g",
+"tonno al naturale 200 g",
+"verdure miste 250 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 640 kcal · P 36 · G 29 · C 56",
+"sgombro 150 g",
+"patate 300 g",
+"insalata 100 g",
+"olio extravergine 10 ml",
+"Prima di dormire",
+"~ 75 kcal · P 10 · G 2 · C 4",
+"yogurt greco 2% 100 g",
+"",
+"G6 · Manzo e uova",
+"= 2.575 kcal · P 164 · G 75 · C 302",
+"Colazione",
+"~ 730 kcal · P 46 · G 18 · C 95",
+"fiocchi d'avena 90 g",
+"latte intero 300 ml",
+"proteine in polvere 30 g",
+"mele 1 pz",
+"Spuntino",
+"~ 400 kcal · P 26 · G 6 · C 61",
+"yogurt greco 2% 200 g",
+"marmellata 40 g",
+"pane integrale 60 g",
+"Pranzo",
+"~ 820 kcal · P 54 · G 26 · C 86",
+"pasta integrale 110 g",
+"macinato di manzo 5% 180 g",
+"verdure miste 200 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 625 kcal · P 38 · G 25 · C 60",
+"uova 3 pz",
+"albumi 3 pz",
+"patate 300 g",
+"verdure miste 200 g",
+"olio extravergine 10 ml",
+"",
+"G7 · Pesce misto",
+"= 2.535 kcal · P 169 · G 75 · C 291",
+"Colazione",
+"~ 575 kcal · P 31 · G 18 · C 73",
+"pane integrale 100 g",
+"uova 3 pz",
+"pomodori 100 g",
+"spremuta d'arancia 250 ml",
+"Spuntino",
+"~ 405 kcal · P 28 · G 18 · C 37",
+"yogurt greco 2% 250 g",
+"noci 20 g",
+"miele 30 g",
+"Pranzo",
+"~ 810 kcal · P 53 · G 18 · C 106",
+"riso basmati 120 g",
+"gamberi 200 g",
+"verdure miste 250 g",
+"olio extravergine 15 ml",
+"Cena",
+"~ 665 kcal · P 57 · G 22 · C 54",
+"fesa di tacchino 200 g",
+"pane integrale 100 g",
+"verdure miste 200 g",
+"olio extravergine 15 ml",
+"Dopo cena",
+"~ 80 kcal",
+"frutto 1 pz"
+  ].join("\n");
+
+  var data = {v:4, items:[], extras:[], piano:SEED, presi:{}, conf:{}};
+  var tab = "spesa", edit = false, backup = false, modificaPiano = false, aiuto = false;
+  var giorno = null, bozza = null, esito = null, aperto = null;
+  var importa = false, vediTesto = false;
+  var app = document.getElementById("app");
+
+  function nid(){ return Math.random().toString(36).slice(2,9); }
+  function norm(s){ return String(s).toLowerCase().trim()
+    .replace(/[àá]/g,"a").replace(/[èé]/g,"e").replace(/[ìí]/g,"i")
+    .replace(/[òó]/g,"o").replace(/[ùú]/g,"u").replace(/\s+/g," "); }
+  function chiave(s){ return norm(s).replace(/[^a-z0-9]/g,""); }
+
+  function reparto(nome){
+    var n = norm(nome);
+    for(var i=0;i<REPARTI.length;i++) if(n.indexOf(REPARTI[i][0]) !== -1) return REPARTI[i][1];
+    for(var j=0;j<VERDURA.length;j++) if(n.indexOf(VERDURA[j]) !== -1) return "Frutta e verdura";
+    return "Altro";
+  }
+
+  function base(q, u){
+    if(u === "kg") return {q:q*1000, u:"g"};
+    if(u === "l")  return {q:q*1000, u:"ml"};
+    return {q:q, u:u};
+  }
+  function confDi(nome){
+    var k = chiave(nome);
+    if(data.conf && data.conf[k]) return data.conf[k];
+    var n = norm(nome);
+    for(var i=0;i<CONFEZIONI.length;i++){
+      if(n.indexOf(CONFEZIONI[i][0]) !== -1)
+        return {q:CONFEZIONI[i][1], u:CONFEZIONI[i][2], et:CONFEZIONI[i][3]};
+    }
+    return null;
+  }
+
+  // se il prodotto si consuma a contenitori interi, quale e quanto grande
+  function contenitore(nome, u){
+    var c = confDi(nome);
+    if(!c || !DISCRETI[c.et]) return null;
+    if(u === "pz") return null;
+    var cb = base(c.q, c.u), ub = base(1, u);
+    if(cb.u !== ub.u) return null;
+    return {q:cb.q, et:c.et, plur:DISCRETI[c.et]};
+  }
+
+  // di quanto scende una cosa a ogni tocco
+  function passoTocco(i){
+    if(i.u === "pz") return 1;
+    var c = contenitore(i.name, i.u);
+    if(c) return c.q;
+    return null;                       // roba sfusa: si dimezza
+  }
+
+  function num(q){
+    var n = Math.round(q*100)/100;
+    return String(n).replace(".", ",");
+  }
+  function interi(q, u){ return u === "pz" ? Math.round(q) : q; }
+  function fmt(q, u){
+    if(!q && q !== 0) return "";
+    if(u === "g" && q >= 1000) return num(q/1000) + " kg";
+    if(u === "ml" && q >= 1000) return num(q/1000) + " L";
+    return num(q) + (u ? " " + (u === "l" ? "L" : u) : "");
+  }
+
+  // ---------- il piano ----------
+  function analizza(testo){
+    var giorni = [], g = null, p = null, titolo = "";
+    String(testo).split(/\r?\n/).forEach(function(riga){
+      var l = riga.trim();
+      if(!l) return;
+      if(l[0] === "#"){ titolo = l.slice(1).trim(); return; }
+      var mg = l.match(/^G\s*(\d+)\s*[·:.\-–—]?\s*(.*)$/i);
+      if(mg){ g = {n:parseInt(mg[1],10), t:mg[2].trim() || ("Giorno "+mg[1]), tot:"", pasti:[]};
+        giorni.push(g); p = null; return; }
+      if(!g) return;
+      if(l[0] === "="){ g.tot = l.slice(1).trim(); return; }
+      if(l[0] === "~"){ if(p) p.m = l.slice(1).trim(); return; }
+      var senzaDue = l.replace(/:$/,"").trim();
+      if(l.slice(-1) === ":" || PASTI_NOTI.indexOf(norm(senzaDue)) !== -1){
+        p = {n:senzaDue, m:"", cibi:[]}; g.pasti.push(p); return;
+      }
+      if(!p){ p = {n:"Pasto", m:"", cibi:[]}; g.pasti.push(p); }
+      var rep = "";
+      var mr = l.match(/@([\wàèéìòù' ]+)$/i);
+      if(mr){ rep = mr[1].trim(); l = l.slice(0, mr.index).trim(); }
+      var mq = l.match(/^(.+?)\s+([\d]+(?:[.,]\d+)?)\s*(g|kg|ml|l|pz|fette?|cucchiai?o?|scatolette?|barattoli?|vasetti?|bottiglie?|buste?)?$/i);
+      if(mq){
+        var u = (mq[3]||"pz").toLowerCase();
+        if(UNITA.indexOf(u) === -1) u = "pz";
+        p.cibi.push({nome:mq[1].trim(), q:parseFloat(mq[2].replace(",",".")), u:u, rep:rep});
+      } else {
+        p.cibi.push({nome:l, q:0, u:"", rep:rep});
+      }
+    });
+    return {titolo:titolo, giorni:giorni};
+  }
+
+  function conta(pi){
+    var c = 0;
+    pi.giorni.forEach(function(g){ g.pasti.forEach(function(p){ c += p.cibi.length; }); });
+    return c;
+  }
+
+  function arrotonda(q, u){
+    if(u === "g") return Math.ceil(q/10)*10;
+    if(u === "ml") return Math.ceil(q/50)*50;
+    if(u === "kg" || u === "l") return Math.round(q*10)/10;
+    return Math.ceil(q);
+  }
+
+  function fabbisogno(pi){
+    var mappa = {}, ordine = [];
+    pi.giorni.forEach(function(g){
+      g.pasti.forEach(function(p){
+        p.cibi.forEach(function(c){
+          var k = chiave(c.nome);
+          if(!k) return;
+          if(!mappa[k]){
+            mappa[k] = {nome:c.nome, rep:c.rep || reparto(c.nome), unita:{}};
+            ordine.push(k);
+          }
+          if(c.rep) mappa[k].rep = c.rep;
+          if(c.q) mappa[k].unita[c.u] = (mappa[k].unita[c.u] || 0) + c.q;
+        });
+      });
+    });
+    var out = [];
+    ordine.forEach(function(k){
+      if(k === "caffe" || k === "acqua" || k === "the") return;
+      var v = mappa[k], unita = Object.keys(v.unita);
+      if(!unita.length) out.push({nome:v.nome, q:0, u:"", rep:v.rep, chiave:k});
+      else unita.forEach(function(u){
+        out.push({nome:v.nome, q:arrotonda(v.unita[u], u), u:u, rep:v.rep, chiave:k+"|"+u});
+      });
+    });
+    return out;
+  }
+
+  // ---------- memoria ----------
+  function sistemaItem(i){
+    // porta i dati vecchi (livello 0/1/2 + quantità testuale) al modello nuovo
+    if(i.u === undefined || i.q === undefined){
+      var q = null, u = "";
+      var m = String(i.qty||"").match(/^([\d]+(?:[.,]\d+)?)\s*(g|kg|ml|l|pz)?$/i);
+      if(m){ q = parseFloat(m[1].replace(",",".")); u = (m[2]||"pz").toLowerCase(); }
+      if(q !== null && i.level === 2){ i.q = q; i.u = u; i.rif = q; }
+      else { i.q = null; i.u = u; i.rif = i.rif || 0; }
+    }
+    if(i.level === undefined) i.level = 2;
+    return i;
+  }
+
+  function carica(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(raw){
+        var p = JSON.parse(raw);
+        data = {v:4, items:(p.items||[]).map(sistemaItem), extras:p.extras||[],
+                piano: typeof p.piano === "string" ? p.piano : SEED,
+                presi: p.presi||{}, conf: p.conf||{}};
+        if(p.v !== 4) localStorage.setItem(KEY, JSON.stringify(data));
+      }
+    }catch(e){}
+  }
+  function salva(){
+    try{ localStorage.setItem(KEY, JSON.stringify(data)); }catch(e){}
+    render();
+  }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+
+  // barattolo: se c'è una quantità, il livello viene da quella
+  function livello(i){
+    if(i.q === null || i.q === undefined) return i.level;
+    if(i.q <= 0) return 0;
+    var rif = i.rif || i.q;
+    var f = i.q / rif;
+    return f >= 0.6 ? 2 : f > 0.15 ? 1 : 0;
+  }
+
+  // quanto è pieno, da 0 a 1
+  function frazione(i){
+    if(i.q === null || i.q === undefined) return [0, 0.45, 1][i.level];
+    if(i.q <= 0) return 0;
+    var rif = i.rif || i.q;
+    return Math.max(0, Math.min(1, i.q / rif));
+  }
+  var PREC = {};
+
+  function jar(i){
+    var fr = frazione(i);
+    var st = fr <= 0 ? "var(--vuoto)" : "var(--testo)";
+    var col = fr >= 0.5 ? "var(--acc)" : "var(--mezzo)";
+    var da = (PREC[i.id] === undefined) ? fr : PREC[i.id];
+    PREC[i.id] = fr;
+    return '<svg viewBox="0 0 20 26" width="24" height="30" aria-hidden="true">'
+      + '<rect x="5.5" y="1" width="9" height="3.2" rx="1.2" fill="'+st+'"/>'
+      + '<rect x="3" y="5.4" width="14" height="17" rx="3.4" fill="none" stroke="'+st+'" stroke-width="1.5"/>'
+      + '<rect class="fill" x="4.6" y="6.6" width="10.8" height="14.8" rx="2" fill="'+col+'" '
+      + 'style="transform:scaleY('+da.toFixed(3)+')" data-fr="'+fr.toFixed(3)+'"/>'
+      + '</svg>';
+  }
+
+  // dopo ogni disegno, fa scivolare i livelli alla posizione nuova
+  function anima(){
+    var r = app.querySelectorAll(".fill[data-fr]");
+    if(!r.length) return;
+    var applica = function(){
+      for(var n=0;n<r.length;n++)
+        r[n].style.transform = "scaleY(" + r[n].getAttribute("data-fr") + ")";
+    };
+    var raf = (typeof requestAnimationFrame === "function")
+      ? requestAnimationFrame : function(f){ setTimeout(f, 16); };
+    raf(function(){ raf(applica); });
+  }
+
+  function perReparto(voci){
+    var out = [], noti = {};
+    CATS.forEach(function(c){ noti[c] = 1; });
+    CATS.forEach(function(c){
+      var l = voci.filter(function(v){ return (v.rep || "Altro") === c; });
+      l.sort(function(x,y){ return (x.coperto?1:0) - (y.coperto?1:0); });
+      if(l.length) out.push([c, l]);
+    });
+    var resto = voci.filter(function(v){ return !noti[v.rep || "Altro"]; });
+    if(resto.length) out.push(["Altro", resto]);
+    return out;
+  }
+
+  function trova(nome){
+    var k = chiave(nome), r = null;
+    data.items.forEach(function(i){ if(chiave(i.name) === k) r = i; });
+    return r;
+  }
+
+  // ---------- la spesa ----------
+  function listaSpesa(){
+    var voci = [];
+    fabbisogno(analizza(data.piano)).forEach(function(v){
+      var k = "s:" + v.chiave;
+      if(data.presi[k]) return;
+      var i = trova(v.nome);
+      var voce = {k:k, nome:v.nome, rep:v.rep, u:v.u, serve:v.q,
+                  manca:v.q, acquisto:v.q, testo:fmt(v.q, v.u),
+                  hai:"", coperto:false, da:""};
+      if(i){
+        var l = livello(i);
+        if(i.q !== null && i.q !== undefined && i.u === v.u && v.q){
+          voce.hai = fmt(i.q, i.u);
+          var resta = v.q - i.q;
+          if(resta <= 0){ voce.coperto = true; voce.manca = 0; voce.acquisto = 0; voce.testo = ""; }
+          else voce.manca = resta;
+        } else if(i.q === null || i.q === undefined){
+          if(l === 2){ voce.coperto = true; voce.manca = 0; voce.acquisto = 0; voce.testo = ""; }
+          else voce.hai = ["finito","sta finendo","pieno"][l];
+        }
+      }
+      if(!voce.coperto && voce.manca){
+        var c = confDi(v.nome), mb = base(voce.manca, v.u);
+        if(c){
+          var cb = base(c.q, c.u);
+          if(cb.u === mb.u){
+            var n = Math.max(1, Math.ceil(mb.q / cb.q));
+            voce.acquisto = base(n * cb.q, mb.u).q;
+            if(v.u === "kg" || v.u === "l") voce.acquisto = voce.acquisto / 1000;
+            voce.testo = (n > 1 ? n + " × " : "") + fmt(c.q, c.u);
+            voce.conf = c;
+            voce.pezzi = n;
+          } else {
+            voce.acquisto = arrotonda(voce.manca, v.u);
+            voce.testo = fmt(voce.acquisto, v.u);
+          }
+        } else {
+          voce.acquisto = arrotonda(voce.manca, v.u);
+          voce.testo = fmt(voce.acquisto, v.u);
+        }
+      }
+      voci.push(voce);
+    });
+    // scorte senza quantità che non stanno nel piano
+    data.items.forEach(function(i){
+      var gia = voci.some(function(v){ return chiave(v.nome) === chiave(i.name); });
+      if(gia) return;
+      var l = livello(i);
+      if(l === 2) return;
+      voci.push({k:"d:"+i.id, nome:i.name, rep:i.cat, u:i.u||"", serve:0, compra:0,
+        hai:(i.q !== null && i.q !== undefined) ? fmt(i.q, i.u) : ["finito","sta finendo",""][l],
+        coperto:false, da:l === 0 ? "finito" : "sta finendo"});
+    });
+    data.extras.forEach(function(e){
+      voci.push({k:"x:"+e.id, nome:e.name, rep:reparto(e.name), u:"", serve:0, compra:0,
+        hai:"", coperto:false, da:"aggiunto"});
+    });
+    return voci;
+  }
+
+  function prendi(k, nome, q, u){
+    if(k.indexOf("s:") === 0){
+      data.presi[k] = 1;
+      if(nome){
+        var q2 = parseFloat(q) || 0;
+        var i = trova(nome);
+        if(i){
+          if(i.q === null || i.q === undefined || i.u !== u){ i.q = q2; i.u = u; }
+          else i.q = Math.round((i.q + q2)*100)/100;
+          i.rif = Math.max(i.rif||0, i.q, q2);
+          i.level = 2;
+        } else {
+          data.items.push({id:nid(), name:nome, cat:reparto(nome), q:q2, u:u,
+            rif:q2, level:2});
+        }
+      }
+    }
+    else if(k.indexOf("d:") === 0){
+      var id = k.slice(2);
+      data.items.forEach(function(i){
+        if(i.id === id){ i.level = 2; if(i.q !== null && i.q !== undefined) i.q = i.rif || i.q; }
+      });
+    }
+    else {
+      var ix = k.slice(2);
+      data.extras = data.extras.filter(function(e){ return e.id !== ix; });
+    }
+    salva();
+  }
+
+  // ---------- viste ----------
+  function render(){
+    var voci = listaSpesa();
+    var h = '<div class="head"><h1>La dispensa</h1><div class="tabs">'
+      + '<button class="tab" data-on="'+(tab==="spesa"?1:0)+'" data-act="tab" data-v="spesa">Spesa'
+      + (voci.length>0 ? ' <span class="badge">'+voci.length+'</span>' : '') + '</button>'
+      + '<button class="tab" data-on="'+(tab==="piano"?1:0)+'" data-act="tab" data-v="piano">Piano</button>'
+      + '<button class="tab" data-on="'+(tab==="dispensa"?1:0)+'" data-act="tab" data-v="dispensa">In casa</button>'
+      + '</div></div>';
+    if(tab === "spesa") h += vistaSpesa(voci);
+    else if(tab === "piano") h += vistaPiano();
+    else h += vistaDispensa();
+    app.innerHTML = h;
+    anima();
+  }
+
+  function vistaSpesa(voci){
+    var tot = fabbisogno(analizza(data.piano)).length;
+    var presi = Object.keys(data.presi).length;
+    var h = '<div class="barra"><input id="extra" placeholder="Aggiungi alla lista" enterkeyhint="done">'
+      + '<button class="btn" data-act="addx">+</button></div>';
+
+    if(tot > 0){
+      var pc = Math.min(100, Math.round(presi/tot*100));
+      h += '<div class="prog"><div class="n">'+presi+' di '+tot+' della settimana</div>'
+        + '<div class="b"><i style="width:'+pc+'%"></i></div></div>';
+    }
+
+    if(!voci.length){
+      h += '<div class="vuoto"><p>Lista vuota.</p>'
+        + '<p>Quando ricominci la settimana torna tutto qui.</p></div>';
+    } else {
+      perReparto(voci).forEach(function(p){
+        h += '<div class="cat">'+p[0]+'</div>';
+        p[1].forEach(function(v){
+          var q = v.testo || "";
+          var tag = "";
+          if(v.coperto) tag = '<span class="tag">hai ' + (v.hai || "tutto") + '</span>';
+          else if(v.hai && v.serve) tag = '<span class="tag">hai '+esc(v.hai)+'</span>';
+          else if(v.conf && v.serve) tag = '<span class="tag">servono '+fmt(v.serve, v.u)+'</span>';
+          else if(v.da) tag = '<span class="tag'+(v.da==="finito"?" rosso":"")+'">'+v.da+'</span>';
+          h += '<div class="riga"><button class="tocca" data-act="preso" data-k="'+esc(v.k)+'" '
+            + 'data-n="'+esc(v.nome)+'" data-q="'+(v.acquisto||"")+'" data-u="'+esc(v.u||"")+'" '
+            + 'aria-label="Preso '+esc(v.nome)+'"><span class="quad"></span>'
+            + '<span class="nome">'+esc(v.nome)+'</span>'
+            + (q ? '<span class="qta">'+q+'</span>' : '') + tag + '</button></div>';
+        });
+      });
+    }
+    h += '<div class="pie"><button class="btn chiaro" data-act="nuova">Ricomincia la settimana</button></div>';
+    return h;
+  }
+
+  function vistaDispensa(){
+    var h = '<div class="barra"><input id="nome" placeholder="Aggiungi una cosa che hai in casa" '
+      + 'enterkeyhint="done"><button class="btn" data-act="add">+</button></div>';
+
+    if(!data.items.length){
+      return h + '<div class="vuoto"><p>Ancora vuota: si riempie da sola quando spunti la spesa.</p>'
+        + '<button class="btn chiaro" data-act="base">Aggiungi le scorte di casa</button></div>';
+    }
+    h += '<div class="modo"><button class="link" data-act="edit">'
+      + (edit ? "Fine" : "Elimina") + '</button></div>';
+
+    perReparto(data.items.map(function(i){ return {rep:i.cat, i:i}; })).forEach(function(p){
+      h += '<div class="cat">'+p[0]+'</div>';
+      p[1].forEach(function(w){
+        var i = w.i, l = livello(i);
+        var q = "";
+        if(i.q !== null && i.q !== undefined){
+          q = i.q > 0 ? fmt(i.q, i.u) : "";
+          var ct = contenitore(i.name, i.u);
+          if(ct && i.q > 0){
+            var nb = base(i.q, i.u).q / ct.q;
+            if(Math.abs(nb - Math.round(nb)) < 0.01)
+              q = Math.round(nb) + " " + (Math.round(nb) === 1 ? ct.et : ct.plur);
+          }
+        }
+        h += '<div class="riga'+(l===0?" vuota":"")+'">'
+          + '<button class="jarbtn" data-act="jartap" data-id="'+i.id+'" '
+          + 'aria-label="'+esc(i.name)+': tocca per abbassare il livello">'+jar(i)+'</button>'
+          + '<button class="tocca" data-act="apri" data-id="'+i.id+'" '
+          + 'aria-label="'+esc(i.name)+', quanto ne ho">'
+          + '<span class="nome">'+esc(i.name)+'</span>'
+          + (q ? '<span class="qta">'+q+'</span>'
+               : '<span class="tag'+(l===0?" rosso":"")+'">'
+                 + ["finito","sta finendo","pieno"][l]+'</span>')
+          + '</button>'
+          + (edit ? '<button class="x" data-act="del" data-id="'+i.id+'" aria-label="Elimina">&times;</button>' : '')
+          + '</div>';
+        if(aperto === i.id) h += pannello(i);
+      });
+    });
+
+    h += '<div class="pie"><button class="link" data-act="backup">'
+      + (backup ? "Chiudi il backup" : "Backup dei dati") + '</button>'
+      + '<div style="color:var(--tenue);font-size:12.5px">versione ' + VERSIONE + '</div></div>';
+    if(backup){
+      h += '<div class="box"><textarea class="editor" style="height:24vh" id="bk">'
+        + esc(JSON.stringify(data)) + '</textarea>'
+        + '<div class="riga2"><button class="btn" data-act="copia">Copia</button>'
+        + '<button class="btn chiaro" data-act="ripristina">Ripristina</button></div></div>';
+    }
+    return h;
+  }
+
+  function unitaPanello(i, u){
+    var ct = contenitore(i.name, i.u);
+    return ct ? (u + " · " + ct.q + " a " + ct.et) : u;
+  }
+  function pannello(i){
+    var ha = (i.q !== null && i.q !== undefined);
+    var u = i.u || "g";
+    var h = '<div class="pannello">';
+    if(ha){
+      h += '<div class="step">'
+        + '<button data-act="meno" data-id="'+i.id+'" aria-label="Togli">−</button>'
+        + '<input id="q-'+i.id+'" type="number" inputmode="decimal" value="'+num(i.q)+'" '
+        + 'data-act-change="quanto" data-id="'+i.id+'">'
+        + '<span class="u">'+esc(unitaPanello(i, u))+'</span>'
+        + '<button data-act="piu" data-id="'+i.id+'" aria-label="Aggiungi">+</button></div>'
+        + '<div class="azioni">'
+        + '<button data-act="pieno" data-id="'+i.id+'">Rifatto pieno</button>'
+        + '<button class="rosso" data-act="finito" data-id="'+i.id+'">È finito</button></div>';
+    } else {
+      h += '<div class="azioni">'
+        + '<button data-act="liv" data-id="'+i.id+'" data-v="2">Pieno</button>'
+        + '<button data-act="liv" data-id="'+i.id+'" data-v="1">A metà</button>'
+        + '<button class="rosso" data-act="liv" data-id="'+i.id+'" data-v="0">Finito</button></div>'
+        + '<div class="step" style="margin-top:9px">'
+        + '<input id="q-'+i.id+'" type="number" inputmode="decimal" placeholder="oppure quanto ne hai">'
+        + '<select id="u-'+i.id+'">' + UNITA.map(function(x){
+            return '<option'+(x===(i.u||"g")?" selected":"")+'>'+x+'</option>'; }).join('')
+        + '</select>'
+        + '<button data-act="imposta" data-id="'+i.id+'" aria-label="Imposta">✓</button></div>';
+    }
+    var c = confDi(i.name);
+    h += '<div class="step" style="margin-top:9px">'
+      + '<span class="u" style="min-width:76px">Confezione</span>'
+      + '<input id="c-'+i.id+'" type="number" inputmode="decimal" placeholder="a peso" '
+      + 'value="'+(c ? num(c.q) : "")+'">'
+      + '<select id="cu-'+i.id+'">' + UNITA.map(function(x){
+          return '<option'+(c && x===c.u ? " selected" : "")+'>'+x+'</option>'; }).join('')
+      + '</select>'
+      + '<button data-act="conf" data-id="'+i.id+'" aria-label="Salva confezione">✓</button></div>';
+    return h + '</div>';
+  }
+  // ---------- il piano ----------
+  function serializza(pi){
+    var out = [];
+    if(pi.titolo) out.push("# " + pi.titolo);
+    pi.giorni.forEach(function(g){
+      out.push("");
+      out.push("G" + g.n + " · " + (g.t || ("Giorno " + g.n)));
+      if(g.tot) out.push("= " + g.tot);
+      g.pasti.forEach(function(p){
+        out.push((p.n || "Pasto") + ":");
+        if(p.m) out.push("~ " + p.m);
+        p.cibi.forEach(function(c){
+          out.push(c.nome + (c.q ? " " + num(c.q) + " " + c.u : ""));
+        });
+      });
+    });
+    return out.join("\n").trim();
+  }
+
+  function scrivi(pi){
+    pi.giorni.forEach(function(g, n){ g.n = n + 1; });
+    data.piano = serializza(pi);
+    salva();
+  }
+
+  function vistaPiano(){
+    var pi = analizza(data.piano);
+    if(importa) return vistaImporta(pi);
+    if(!pi.giorni.length){
+      return '<div class="vuoto"><p>Nessun piano.</p>'
+        + '<div class="riga2" style="padding:0 10px"><button class="btn" data-act="g-add">Crea il primo giorno</button>'
+        + '<button class="btn chiaro" data-act="importa">Incolla un piano</button></div></div>';
+    }
+    if(giorno === null || giorno >= pi.giorni.length){
+      var d = new Date().getDay();
+      giorno = Math.min(d === 0 ? 6 : d-1, pi.giorni.length-1);
+    }
+    var g = pi.giorni[giorno];
+    var h = '<div class="giorni">';
+    pi.giorni.forEach(function(x, i){
+      h += '<button class="g" data-on="'+(i===giorno?1:0)+'" data-act="giorno" data-v="'+i+'">'
+        + x.n + '</button>';
+    });
+    if(modificaPiano) h += '<button class="g" data-act="g-add" aria-label="Aggiungi giorno">+</button>';
+    h += '</div>';
+
+    if(!modificaPiano){
+      h += '<div class="gtitolo"><h2>'+esc(g.t)+'</h2>'
+        + (g.tot ? '<div class="gtot">'+esc(g.tot)+'</div>' : '') + '</div>';
+      g.pasti.forEach(function(p){
+        h += '<div class="pasto"><div class="pnome"><b>'+esc(p.n)+'</b>'
+          + (p.m ? '<span class="pmac">'+esc(p.m)+'</span>' : '') + '</div><ul class="cibi">'
+          + p.cibi.map(function(c){
+              return '<li><span>'+esc(c.nome)+'</span>'
+                + (c.q ? '<em>'+fmt(c.q, c.u)+'</em>' : '') + '</li>'; }).join('')
+          + '</ul></div>';
+      });
+      h += '<div class="pie"><button class="btn chiaro" data-act="modifica">Modifica questo giorno</button>'
+        + '<button class="link" data-act="importa">Incolla un piano ricevuto</button></div>';
+      return h;
+    }
+
+    // ----- modalità modifica, tutta a campi -----
+    h += '<div class="ed-testa">'
+      + '<input class="ed-tit" data-ch="g-tit" value="'+esc(g.t)+'" placeholder="Nome del giorno">'
+      + '<input class="ed-sot" data-ch="g-tot" value="'+esc(g.tot)+'" '
+      + 'placeholder="Totale del giorno, se lo sai"></div>';
+
+    g.pasti.forEach(function(p, pi2){
+      h += '<div class="ed-pasto"><div class="ed-riga1">'
+        + '<input class="ed-pn" data-ch="p-nome" data-p="'+pi2+'" value="'+esc(p.n)+'" '
+        + 'placeholder="Nome del pasto">'
+        + '<button class="x" data-act="p-del" data-p="'+pi2+'" aria-label="Elimina pasto">&times;</button></div>'
+        + '<input class="ed-sot" data-ch="p-mac" data-p="'+pi2+'" value="'+esc(p.m)+'" '
+        + 'placeholder="Calorie e macro, facoltativo">';
+      p.cibi.forEach(function(c, ci){
+        h += '<div class="ed-cibo">'
+          + '<input class="ed-nome" data-ch="c-nome" data-p="'+pi2+'" data-c="'+ci+'" '
+          + 'value="'+esc(c.nome)+'" placeholder="Alimento">'
+          + '<input class="ed-q" type="number" inputmode="decimal" data-ch="c-q" '
+          + 'data-p="'+pi2+'" data-c="'+ci+'" value="'+(c.q ? num(c.q) : "")+'" placeholder="—">'
+          + '<select class="ed-u" data-ch="c-u" data-p="'+pi2+'" data-c="'+ci+'">'
+          + ["g","ml","pz","kg","l"].map(function(u){
+              return '<option'+(u === (c.u||"g") ? " selected" : "")+'>'+u+'</option>'; }).join('')
+          + '</select>'
+          + '<button class="x" data-act="c-del" data-p="'+pi2+'" data-c="'+ci+'" '
+          + 'aria-label="Togli alimento">&times;</button></div>';
+      });
+      h += '<button class="ed-piu" data-act="c-add" data-p="'+pi2+'">+ alimento</button></div>';
+    });
+
+    h += '<div class="pie">'
+      + '<button class="btn chiaro" data-act="p-add">+ pasto</button>'
+      + '<button class="btn" data-act="fine-modifica">Fatto</button>'
+      + '<button class="link" data-act="g-del">Elimina il giorno '+g.n+'</button></div>';
+    return h;
+  }
+
+  function vistaImporta(pi){
+    var h = '<div class="box"><p style="margin:0">Incolla qui un piano già scritto e '
+      + 'sostituisce quello attuale. Serve per quando ne ricevi uno nuovo: non devi '
+      + 'riscriverlo a mano.</p></div>'
+      + '<div style="padding:12px 16px 0"><textarea class="editor" id="ed" '
+      + 'placeholder="Incolla qui...">'+esc(bozza === null ? "" : bozza)+'</textarea>'
+      + '<div class="riga2"><button class="btn" data-act="salva-importa">Sostituisci il piano</button>'
+      + '<button class="btn chiaro" data-act="annulla-importa">Annulla</button></div></div>';
+    if(esito) h += '<div class="box err">'+esito+'</div>';
+    h += '<div class="pie"><button class="link" data-act="vedi-attuale">'
+      + (vediTesto ? "Nascondi il piano attuale" : "Copia il piano attuale") + '</button></div>';
+    if(vediTesto){
+      h += '<div class="box"><textarea class="editor" style="height:26vh" id="attuale">'
+        + esc(data.piano) + '</textarea>'
+        + '<div class="riga2"><button class="btn" data-act="copia-piano">Copia</button></div></div>';
+    }
+    return h;
+  }
+
+  // ---------- azioni ----------
+  function aggiungi(){
+    var el = document.getElementById("nome"); if(!el) return;
+    var n = (el.value||"").trim(); if(!n) return;
+    data.items.push({id:nid(), name:n, cat:reparto(n), q:null, u:"", rif:0, level:2});
+    salva();
+    var f = document.getElementById("nome"); if(f) f.focus();
+  }
+  function aggiungiExtra(){
+    var el = document.getElementById("extra"); if(!el) return;
+    var n = (el.value||"").trim(); if(!n) return;
+    data.extras.push({id:nid(), name:n});
+    salva();
+    var f = document.getElementById("extra"); if(f) f.focus();
+  }
+  function conItem(id, fn){
+    data.items.forEach(function(i){ if(i.id === id) fn(i); });
+    salva();
+  }
+  function passo(i){
+    var st = passoTocco(i);
+    if(st) return st;
+    return PASSO[i.u] || 1;
+  }
+
+  app.addEventListener("click", function(ev){
+    var b = ev.target.closest("[data-act]"); if(!b) return;
+    var a = b.getAttribute("data-act"), id = b.getAttribute("data-id");
+    if(a === "tab"){ tab = b.getAttribute("data-v"); edit = false; backup = false; aperto = null; render(); }
+    else if(a === "giorno"){ giorno = parseInt(b.getAttribute("data-v"),10); render(); }
+    else if(a === "add") aggiungi();
+    else if(a === "addx") aggiungiExtra();
+    else if(a === "edit"){ edit = !edit; aperto = null; render(); }
+    else if(a === "backup"){ backup = !backup; render(); }
+    else if(a === "aiuto"){
+      var e0 = document.getElementById("ed"); if(e0) bozza = e0.value;
+      aiuto = !aiuto; render();
+    }
+    else if(a === "modifica"){ modificaPiano = true; render(); }
+    else if(a === "fine-modifica"){ modificaPiano = false; render(); }
+    else if(a === "importa"){ importa = true; bozza = null; esito = null; vediTesto = false; render(); }
+    else if(a === "annulla-importa"){ importa = false; bozza = null; esito = null; render(); }
+    else if(a === "vedi-attuale"){
+      var ee = document.getElementById("ed"); if(ee) bozza = ee.value;
+      vediTesto = !vediTesto; render();
+    }
+    else if(a === "copia-piano"){
+      var ta = document.getElementById("attuale");
+      ta.select(); ta.setSelectionRange(0, 999999);
+      try{ navigator.clipboard.writeText(ta.value); }catch(e2){ document.execCommand("copy"); }
+      b.textContent = "Copiato";
+    }
+    else if(a === "salva-importa"){
+      var t = document.getElementById("ed").value;
+      if(!analizza(t).giorni.length){
+        bozza = t;
+        esito = "Non ho riconosciuto nessun giorno in quel testo. Il piano non è stato toccato.";
+        render(); return;
+      }
+      data.piano = t; bozza = null; esito = null; importa = false; giorno = null; vediTesto = false;
+      salva();
+    }
+    else if(a === "g-add"){
+      var pi1 = analizza(data.piano);
+      pi1.giorni.push({n:pi1.giorni.length+1, t:"Giorno nuovo", tot:"",
+        pasti:[{n:"Colazione", m:"", cibi:[]},{n:"Pranzo", m:"", cibi:[]},{n:"Cena", m:"", cibi:[]}]});
+      giorno = pi1.giorni.length - 1; modificaPiano = true;
+      scrivi(pi1);
+    }
+    else if(a === "g-del"){
+      var pi2 = analizza(data.piano);
+      if(pi2.giorni.length <= 1) return;
+      pi2.giorni.splice(giorno, 1);
+      giorno = Math.max(0, giorno - 1);
+      scrivi(pi2);
+    }
+    else if(a === "p-add"){
+      var pi3 = analizza(data.piano);
+      pi3.giorni[giorno].pasti.push({n:"Nuovo pasto", m:"", cibi:[]});
+      scrivi(pi3);
+    }
+    else if(a === "p-del"){
+      var pi4 = analizza(data.piano);
+      pi4.giorni[giorno].pasti.splice(parseInt(b.getAttribute("data-p"),10), 1);
+      scrivi(pi4);
+    }
+    else if(a === "c-add"){
+      var pi5 = analizza(data.piano);
+      pi5.giorni[giorno].pasti[parseInt(b.getAttribute("data-p"),10)]
+        .cibi.push({nome:"", q:0, u:"g", rep:""});
+      scrivi(pi5);
+    }
+    else if(a === "c-del"){
+      var pi6 = analizza(data.piano);
+      pi6.giorni[giorno].pasti[parseInt(b.getAttribute("data-p"),10)]
+        .cibi.splice(parseInt(b.getAttribute("data-c"),10), 1);
+      scrivi(pi6);
+    }
+    else if(a === "preso") prendi(b.getAttribute("data-k"), b.getAttribute("data-n"),
+      b.getAttribute("data-q"), b.getAttribute("data-u"));
+    else if(a === "nuova"){ data.presi = {}; salva(); }
+    else if(a === "apri"){ aperto = (aperto === id) ? null : id; render(); }
+    else if(a === "jartap") conItem(id, function(i){
+      if(i.q === null || i.q === undefined){
+        i.level = i.level === 2 ? 1 : i.level === 1 ? 0 : 2;
+        return;
+      }
+      var rif = i.rif || i.q;
+      if(i.q <= 0){ i.q = rif; i.level = 2; return; }
+      var st = passoTocco(i);
+      if(st){
+        i.q = Math.max(0, Math.round((i.q - st)*100)/100);
+      } else {
+        var meta = Math.floor(rif * 0.5 / 10) * 10;
+        i.q = (meta > 0 && i.q > meta) ? meta : 0;
+      }
+      i.q = interi(i.q, i.u);
+      i.level = i.q > 0 ? 2 : 0;
+    });
+    else if(a === "meno") conItem(id, function(i){
+      i.q = interi(Math.max(0, Math.round((i.q - passo(i))*100)/100), i.u); });
+    else if(a === "piu") conItem(id, function(i){
+      i.q = interi(Math.round((i.q + passo(i))*100)/100, i.u); i.rif = Math.max(i.rif||0, i.q); });
+    else if(a === "finito") conItem(id, function(i){ i.q = 0; i.level = 0; });
+    else if(a === "pieno") conItem(id, function(i){ i.q = i.rif || i.q; i.level = 2; });
+    else if(a === "liv"){
+      var v = parseInt(b.getAttribute("data-v"),10);
+      conItem(id, function(i){ i.level = v; });
+    }
+    else if(a === "conf"){
+      var ci = document.getElementById("c-"+id), cu = document.getElementById("cu-"+id);
+      var it = null;
+      data.items.forEach(function(x){ if(x.id === id) it = x; });
+      if(!it) return;
+      var k = chiave(it.name);
+      var vc = parseFloat(String(ci.value).replace(",","."));
+      if(!data.conf) data.conf = {};
+      if(isNaN(vc) || vc <= 0) delete data.conf[k];
+      else data.conf[k] = {q:vc, u:cu.value, et:"confezione"};
+      aperto = null;
+      salva();
+    }
+    else if(a === "imposta"){
+      var campo = document.getElementById("q-"+id), us = document.getElementById("u-"+id);
+      var val = parseFloat(String(campo.value).replace(",","."));
+      if(isNaN(val)) return;
+      conItem(id, function(i){ i.q = val; i.u = us.value; i.rif = Math.max(i.rif||0, val); i.level = 2; });
+    }
+    else if(a === "base"){
+      ["Olio extravergine","Sale","Caffè","Zucchero","Aceto","Detersivo piatti",
+       "Carta casa","Sacchetti spazzatura","Sapone mani"].forEach(function(n){
+        data.items.push({id:nid(), name:n, cat:reparto(n), q:null, u:"", rif:0, level:2}); });
+      salva();
+    }
+    else if(a === "del"){
+      data.items = data.items.filter(function(i){ return i.id !== id; });
+      salva();
+    }
+    else if(a === "copia"){
+      var t2 = document.getElementById("bk");
+      t2.select(); t2.setSelectionRange(0, 999999);
+      try{ navigator.clipboard.writeText(t2.value); }catch(e){ document.execCommand("copy"); }
+      b.textContent = "Copiato";
+    }
+    else if(a === "ripristina"){
+      try{
+        var p = JSON.parse(document.getElementById("bk").value);
+        data = {v:4, items:(p.items||[]).map(sistemaItem), extras:p.extras||[],
+                piano: typeof p.piano === "string" ? p.piano : SEED,
+                presi:p.presi||{}, conf:p.conf||{}};
+        backup = false; salva();
+      }catch(e){ alert("Il testo incollato non è un backup valido."); }
+    }
+  });
+
+  app.addEventListener("change", function(ev){
+    var ch = ev.target.getAttribute && ev.target.getAttribute("data-ch");
+    if(ch){
+      var pi = analizza(data.piano), g = pi.giorni[giorno];
+      var ip = parseInt(ev.target.getAttribute("data-p"),10);
+      var ic = parseInt(ev.target.getAttribute("data-c"),10);
+      var val = ev.target.value;
+      if(ch === "g-tit") g.t = val.trim() || ("Giorno " + g.n);
+      else if(ch === "g-tot") g.tot = val.trim();
+      else if(ch === "p-nome") g.pasti[ip].n = val.trim() || "Pasto";
+      else if(ch === "p-mac") g.pasti[ip].m = val.trim();
+      else if(ch === "c-nome") g.pasti[ip].cibi[ic].nome = val.trim();
+      else if(ch === "c-q"){
+        var n2 = parseFloat(String(val).replace(",","."));
+        g.pasti[ip].cibi[ic].q = (isNaN(n2) || n2 <= 0) ? 0 : n2;
+      }
+      else if(ch === "c-u") g.pasti[ip].cibi[ic].u = val;
+      g.pasti.forEach(function(p){
+        p.cibi = p.cibi.filter(function(c){ return c.nome; });
+      });
+      scrivi(pi);
+      return;
+    }
+    if(ev.target.getAttribute && ev.target.getAttribute("data-act-change") === "quanto"){
+      var id = ev.target.getAttribute("data-id");
+      var val = parseFloat(String(ev.target.value).replace(",","."));
+      if(isNaN(val) || val < 0) return;
+      conItem(id, function(i){ i.q = val; i.rif = Math.max(i.rif||0, val); });
+    }
+  });
+
+  app.addEventListener("keydown", function(ev){
+    if(ev.key !== "Enter") return;
+    if(ev.target.id === "nome"){ ev.preventDefault(); aggiungi(); }
+    if(ev.target.id === "extra"){ ev.preventDefault(); aggiungiExtra(); }
+  });
+
+  carica();
+  render();
+})();
+</script>
+</body>
+</html>
