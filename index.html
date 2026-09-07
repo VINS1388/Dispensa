@@ -22,9 +22,11 @@
   body{font-family:var(--font);color:var(--testo);overscroll-behavior:none;
     -webkit-text-size-adjust:100%}
   #app{background:var(--bg);min-height:100vh;max-width:560px;margin:0 auto;
-    padding-bottom:calc(46px + env(safe-area-inset-bottom))}
-  .head{background:var(--capo);color:#fff;padding:calc(15px + env(safe-area-inset-top)) 18px 0}
-  .head h1{font-size:24px;margin:0 0 13px;font-weight:600;letter-spacing:.2px}
+    padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  .head{background:var(--capo);color:#fff;
+    padding:calc(13px + env(safe-area-inset-top)) 18px 15px}
+  .head h1{font-size:23px;margin:0;font-weight:600;letter-spacing:.2px}
+  .head .sub{font-size:13px;color:var(--capotenue);margin-top:4px}
   .tabs{display:flex;gap:4px}
   .tab{flex:1;background:transparent;border:0;color:var(--capotenue);padding:12px 6px;
     font-size:15px;font-family:inherit;border-radius:12px 12px 0 0}
@@ -32,7 +34,27 @@
   .badge{display:inline-block;min-width:20px;padding:1px 6px;margin-left:5px;border-radius:11px;
     background:var(--vuoto);color:#fff;font-size:12px;font-weight:600}
   .tab[data-on="0"] .badge{background:#3A3F49;color:#D6DAE0}
+  .nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;
+    background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(18px);border-top:1px solid var(--linea);
+    padding-bottom:env(safe-area-inset-bottom)}
+  .nav button{flex:1;background:none;border:0;font-family:inherit;font-size:11px;
+    color:var(--tenue);padding:9px 4px 7px;display:flex;flex-direction:column;
+    align-items:center;gap:3px;position:relative}
+  .nav button[data-on="1"]{color:var(--acc);font-weight:600}
+  .nav svg{width:25px;height:25px;display:block}
+  .nav .pallino{position:absolute;top:5px;left:50%;margin-left:7px;min-width:17px;
+    height:17px;border-radius:9px;background:var(--vuoto);color:#fff;font-size:10.5px;
+    font-weight:700;line-height:17px;padding:0 4px}
   .barra{display:flex;gap:8px;padding:14px 16px 6px}
+  .fuori{padding:14px 16px 0}
+  .fuori .et{font-size:13px;color:var(--tenue);margin-bottom:8px}
+  .fuori .gg{display:flex;gap:6px}
+  .fuori .gg button{flex:1;padding:10px 0;border-radius:11px;border:1.5px solid var(--linea);
+    background:var(--carta);color:var(--tenue);font-family:inherit;font-size:14px}
+  .fuori .gg button[data-on="1"]{background:var(--acc);border-color:var(--acc);
+    color:#fff;font-weight:600}
+  .ed-extra{flex:1;padding:9px 11px;background:var(--carta);font-size:16.5px}
   input,select,textarea{font-family:inherit;font-size:16px;padding:11px 12px;border-radius:11px;
     border:1.5px solid var(--linea);background:var(--carta);color:var(--testo);min-width:0}
   input{flex:1}
@@ -140,7 +162,7 @@
 (function(){
   "use strict";
   var KEY = "dispensa.v1";
-  var VERSIONE = "5 · 7 settembre 2026";
+  var VERSIONE = "6 · 8 settembre 2026";
   var CATS = ["Frutta e verdura","Carne","Pesce","Frigo","Freezer","Credenza","Casa","Altro"];
   var UNITA = ["g","kg","ml","l","pz"];
   var PASSO = {g:50, kg:0.5, ml:100, l:0.5, pz:1};
@@ -403,10 +425,10 @@
 "frutto 1 pz"
   ].join("\n");
 
-  var data = {v:4, items:[], extras:[], piano:SEED, presi:{}, conf:{}};
+  var data = {v:4, items:[], extras:[], piano:SEED, presi:{}, conf:{}, fuori:{}};
   var tab = "spesa", edit = false, backup = false, modificaPiano = false, aiuto = false;
   var giorno = null, bozza = null, esito = null, aperto = null;
-  var importa = false, vediTesto = false;
+  var importa = false, vediTesto = false, editSpesa = false;
   var app = document.getElementById("app");
 
   function nid(){ return Math.random().toString(36).slice(2,9); }
@@ -516,7 +538,8 @@
 
   function fabbisogno(pi){
     var mappa = {}, ordine = [];
-    pi.giorni.forEach(function(g){
+    pi.giorni.forEach(function(g, idx){
+      if(data.fuori && data.fuori[idx]) return;   // giorni in trasferta: saltati
       g.pasti.forEach(function(p){
         p.cibi.forEach(function(c){
           var k = chiave(c.nome);
@@ -563,7 +586,7 @@
         var p = JSON.parse(raw);
         data = {v:4, items:(p.items||[]).map(sistemaItem), extras:p.extras||[],
                 piano: typeof p.piano === "string" ? p.piano : SEED,
-                presi: p.presi||{}, conf: p.conf||{}};
+                presi: p.presi||{}, conf: p.conf||{}, fuori: p.fuori||{}};
         if(p.v !== 4) localStorage.setItem(KEY, JSON.stringify(data));
       }
     }catch(e){}
@@ -694,8 +717,9 @@
         coperto:false, da:l === 0 ? "finito" : "sta finendo"});
     });
     data.extras.forEach(function(e){
-      voci.push({k:"x:"+e.id, nome:e.name, rep:reparto(e.name), u:"", serve:0, compra:0,
-        hai:"", coperto:false, da:"aggiunto"});
+      voci.push({k:"x:"+e.id, id:e.id, nome:e.name, rep:reparto(e.name), u:e.u||"",
+        serve:0, manca:0, acquisto:e.q||0, testo:(e.q ? fmt(e.q, e.u) : ""),
+        hai:"", coperto:false, da:"aggiunto", mio:true});
     });
     return voci;
   }
@@ -731,26 +755,70 @@
   }
 
   // ---------- viste ----------
+  var ICONE = {
+    spesa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+      + 'stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/>'
+      + '<circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>',
+    piano:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+      + 'stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="3"/>'
+      + '<path d="M3.5 9.5h17M8 3v3M16 3v3M7.5 13.5h5M7.5 17h9"/></svg>',
+    dispensa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+      + 'stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6v2.6H9z"/>'
+      + '<rect x="5.5" y="6.5" width="13" height="15" rx="3.5"/><path d="M6 14.5h12"/></svg>'
+  };
+  var TITOLI = {spesa:["Spesa","Quello che manca questa settimana"],
+    piano:["Piano","Cosa mangi, giorno per giorno"],
+    dispensa:["In casa","Quello che hai e quanto te ne resta"]};
+
+  function navigazione(n){
+    var h = '<div class="nav">';
+    ["spesa","piano","dispensa"].forEach(function(k){
+      h += '<button data-on="'+(tab===k?1:0)+'" data-act="tab" data-v="'+k+'" '
+        + 'aria-label="'+TITOLI[k][0]+'">' + ICONE[k]
+        + '<span>'+TITOLI[k][0]+'</span>'
+        + (k === "spesa" && n > 0 ? '<span class="pallino">'+n+'</span>' : '')
+        + '</button>';
+    });
+    return h + '</div>';
+  }
+
   function render(){
     var voci = listaSpesa();
-    var h = '<div class="head"><h1>La dispensa</h1><div class="tabs">'
-      + '<button class="tab" data-on="'+(tab==="spesa"?1:0)+'" data-act="tab" data-v="spesa">Spesa'
-      + (voci.length>0 ? ' <span class="badge">'+voci.length+'</span>' : '') + '</button>'
-      + '<button class="tab" data-on="'+(tab==="piano"?1:0)+'" data-act="tab" data-v="piano">Piano</button>'
-      + '<button class="tab" data-on="'+(tab==="dispensa"?1:0)+'" data-act="tab" data-v="dispensa">In casa</button>'
-      + '</div></div>';
+    var h = '<div class="head"><h1>'+TITOLI[tab][0]+'</h1>'
+      + '<div class="sub">'+TITOLI[tab][1]+'</div></div>';
     if(tab === "spesa") h += vistaSpesa(voci);
     else if(tab === "piano") h += vistaPiano();
     else h += vistaDispensa();
-    app.innerHTML = h;
+    app.innerHTML = h + navigazione(voci.length);
     anima();
   }
 
   function vistaSpesa(voci){
     var tot = fabbisogno(analizza(data.piano)).length;
     var presi = Object.keys(data.presi).length;
-    var h = '<div class="barra"><input id="extra" placeholder="Aggiungi alla lista" enterkeyhint="done">'
-      + '<button class="btn" data-act="addx">+</button></div>';
+    var h = '<div class="barra"><input id="extra" '
+      + 'placeholder="Aggiungi, es. birra 6 pz" enterkeyhint="done">'
+      + '<button class="btn" data-act="addx">+</button></div>'
+      + '<div class="modo"><button class="link" data-act="edit-spesa">'
+      + (editSpesa ? "Fine" : "Modifica la lista") + '</button></div>';
+
+    var gg = analizza(data.piano).giorni;
+    var LETTERE = ["L","M","M","G","V","S","D"];
+    var casa = 0;
+    gg.forEach(function(x, i){ if(!(data.fuori && data.fuori[i])) casa++; });
+    if(gg.length){
+      h += '<div class="fuori"><div class="et">'
+        + (casa === gg.length ? "Mangi a casa tutta la settimana"
+           : (gg.length - casa) + (gg.length - casa === 1 ? " giorno fuori: spesa ridotta"
+                                                          : " giorni fuori: spesa ridotta"))
+        + '</div><div class="gg">';
+      gg.forEach(function(x, i){
+        h += '<button data-on="'+((data.fuori && data.fuori[i]) ? 0 : 1)+'" '
+          + 'data-act="fuori" data-v="'+i+'" aria-label="Giorno '+(i+1)+'">'
+          + (LETTERE[i] || (i+1)) + '</button>';
+      });
+      h += '</div></div>';
+    }
 
     if(tot > 0){
       var pc = Math.min(100, Math.round(presi/tot*100));
@@ -771,11 +839,22 @@
           else if(v.hai && v.serve) tag = '<span class="tag">hai '+esc(v.hai)+'</span>';
           else if(v.conf && v.serve) tag = '<span class="tag">servono '+fmt(v.serve, v.u)+'</span>';
           else if(v.da) tag = '<span class="tag'+(v.da==="finito"?" rosso":"")+'">'+v.da+'</span>';
-          h += '<div class="riga"><button class="tocca" data-act="preso" data-k="'+esc(v.k)+'" '
-            + 'data-n="'+esc(v.nome)+'" data-q="'+(v.acquisto||"")+'" data-u="'+esc(v.u||"")+'" '
-            + 'aria-label="Preso '+esc(v.nome)+'"><span class="quad"></span>'
-            + '<span class="nome">'+esc(v.nome)+'</span>'
-            + (q ? '<span class="qta">'+q+'</span>' : '') + tag + '</button></div>';
+          if(editSpesa){
+            h += '<div class="riga">'
+              + (v.mio
+                ? '<input class="ed-extra" data-ch="x-nome" data-id="'+v.id+'" '
+                  + 'value="'+esc(v.nome)+'">'
+                : '<span class="nome" style="padding:12px 0">'+esc(v.nome)+'</span>'
+                  + (q ? '<span class="qta">'+q+'</span>' : ''))
+              + '<button class="x" data-act="togli" data-k="'+esc(v.k)+'" '
+              + 'aria-label="Togli '+esc(v.nome)+'">&times;</button></div>';
+          } else {
+            h += '<div class="riga"><button class="tocca" data-act="preso" data-k="'+esc(v.k)+'" '
+              + 'data-n="'+esc(v.nome)+'" data-q="'+(v.acquisto||"")+'" data-u="'+esc(v.u||"")+'" '
+              + 'aria-label="Preso '+esc(v.nome)+'"><span class="quad"></span>'
+              + '<span class="nome">'+esc(v.nome)+'</span>'
+              + (q ? '<span class="qta">'+q+'</span>' : '') + tag + '</button></div>';
+          }
         });
       });
     }
@@ -1004,8 +1083,11 @@
   }
   function aggiungiExtra(){
     var el = document.getElementById("extra"); if(!el) return;
-    var n = (el.value||"").trim(); if(!n) return;
-    data.extras.push({id:nid(), name:n});
+    var t = (el.value||"").trim(); if(!t) return;
+    var q = 0, u = "";
+    var m = t.match(/^(.+?)\s+([\d]+(?:[.,]\d+)?)\s*(g|kg|ml|l|pz)?$/i);
+    if(m){ t = m[1].trim(); q = parseFloat(m[2].replace(",",".")); u = (m[3]||"pz").toLowerCase(); }
+    data.extras.push({id:nid(), name:t, q:q, u:u});
     salva();
     var f = document.getElementById("extra"); if(f) f.focus();
   }
@@ -1095,6 +1177,27 @@
     else if(a === "preso") prendi(b.getAttribute("data-k"), b.getAttribute("data-n"),
       b.getAttribute("data-q"), b.getAttribute("data-u"));
     else if(a === "nuova"){ data.presi = {}; salva(); }
+    else if(a === "edit-spesa"){ editSpesa = !editSpesa; render(); }
+    else if(a === "togli"){
+      var kk = b.getAttribute("data-k");
+      if(kk.indexOf("x:") === 0){
+        var xid = kk.slice(2);
+        data.extras = data.extras.filter(function(e){ return e.id !== xid; });
+      } else if(kk.indexOf("d:") === 0){
+        var did = kk.slice(2);
+        data.items.forEach(function(i){ if(i.id === did){ i.level = 2;
+          if(i.q !== null && i.q !== undefined) i.q = i.rif || i.q; } });
+      } else {
+        data.presi[kk] = 1;          // salta per questa settimana
+      }
+      salva();
+    }
+    else if(a === "fuori"){
+      var iv = b.getAttribute("data-v");
+      if(!data.fuori) data.fuori = {};
+      if(data.fuori[iv]) delete data.fuori[iv]; else data.fuori[iv] = 1;
+      salva();
+    }
     else if(a === "apri"){ aperto = (aperto === id) ? null : id; render(); }
     else if(a === "jartap") conItem(id, function(i){
       if(i.q === null || i.q === undefined){
@@ -1163,7 +1266,7 @@
         var p = JSON.parse(document.getElementById("bk").value);
         data = {v:4, items:(p.items||[]).map(sistemaItem), extras:p.extras||[],
                 piano: typeof p.piano === "string" ? p.piano : SEED,
-                presi:p.presi||{}, conf:p.conf||{}};
+                presi:p.presi||{}, conf:p.conf||{}, fuori:p.fuori||{}};
         backup = false; salva();
       }catch(e){ alert("Il testo incollato non è un backup valido."); }
     }
@@ -1171,6 +1274,13 @@
 
   app.addEventListener("change", function(ev){
     var ch = ev.target.getAttribute && ev.target.getAttribute("data-ch");
+    if(ch === "x-nome"){
+      var xid2 = ev.target.getAttribute("data-id"), nv = ev.target.value.trim();
+      if(!nv) return;
+      data.extras.forEach(function(e){ if(e.id === xid2) e.name = nv; });
+      salva();
+      return;
+    }
     if(ch){
       var pi = analizza(data.piano), g = pi.giorni[giorno];
       var ip = parseInt(ev.target.getAttribute("data-p"),10);
